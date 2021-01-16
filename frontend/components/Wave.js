@@ -1,20 +1,21 @@
 import React from 'react';
 import { Card, Title, Paragraph
 } from 'react-native-paper';
-import { StyleSheet } from 'react-native';
+import { StyleSheet, Button } from 'react-native';
 
 export const Wave = (props) => {
+    function handleClick(event) {
+      onChildClick("poop"); // pass any argument to the callback
+    }
   return (
-    
-    <Card style={styles.card}>
-      <Card.Cover source={{ uri: props.wave.photo }}/>
-      <Card.Content style={{ backgroundColor: props.wave.color}}>
-        <Title style={styles.color}>{"Started by: " + props.wave.author}</Title>
-        <Title style={styles.color}>{"Task: " + props.wave.task}</Title>
-        <Paragraph style={styles.color}>{props.wave.date + "                       Contributors: "+ props.wave.contributors}</Paragraph>
-      </Card.Content>
-
-    </Card>
+      <Card onClick = {handleClick} style={styles.card}>
+        <Card.Cover source={{ uri: props.wave.photo }}/>
+        <Card.Content style={{ backgroundColor: props.wave.color}}>
+          <Title style={styles.color}>{"Started by: " + props.wave.author}</Title>
+          <Title style={styles.color}>{"Task: " + props.wave.task}</Title>
+          <Paragraph style={styles.color}>{props.wave.date + "                       Contributors: "+ props.wave.contributors}</Paragraph>
+        </Card.Content>
+      </Card>
   );
 };
 const styles = StyleSheet.create({

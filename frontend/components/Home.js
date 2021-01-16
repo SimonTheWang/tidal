@@ -45,11 +45,10 @@ const DATA = [
   },
 ];
 
-export const Home = () => {
+export const Home = (props) => {
   const renderItem = ({ item }) => (
-    <Wave wave={item} />
+    <Wave wave={item} onChildClick={props.handleChildClick}/>
   );
-
   return (
     <SafeAreaView style={styles.maxWidth}>
       <FlatList
