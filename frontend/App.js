@@ -9,8 +9,8 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        <Stack.Screen name="Wave.io" component={Welcome} options={screenOptions.welcome} />
-        <Stack.Screen name="Choose" component={Choose} options={screenOptions.create} />
+        <Stack.Screen name="Wave.io" component={Welcome} options={{...screenOptions.welcome, title: "Tidal"}} />
+        <Stack.Screen name="Choose" component={Choose} options={{...screenOptions.create, title: "Choose a Task"}} />
         <Stack.Screen name="TakePicture" component={TakePicture} options={{...screenOptions.create, title: "Take a Picture!"}} />
         <Stack.Screen name="Ride" component={Ride} options={{...screenOptions.create, title: "Ride the wave!"}} />
         <Stack.Screen name="ViewWave" component={ViewWave} options={{...screenOptions.create, title: "Big wave!"}} />
