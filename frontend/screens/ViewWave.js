@@ -2,13 +2,19 @@ import React from 'react';
 import {
   StyleSheet, View, Image,
 } from 'react-native';
+import { WebView } from 'react-native-webview';
 
 export const ViewWave = ({navigation, route}) => {
+  const mainPath = 'https:tidal-six.vercel.app/generate/'
+  
+  const curentUri = mainPath + '' + '?num=' + ''
+
 	return (
-    <View style={styles.container}>
-      <Image source={require('../assets/wave.png')} style={styles.image}></Image>
-      {/* webview here */}
-    </View>
+    // <View style={styles.container}>
+    //   <Image source={require('../assets/wave.png')} style={styles.image}></Image>
+    //   {/* webview here */}
+    // </View>
+    <WebView source={{ uri: curentUri}}></WebView> 
 	)
 }
 
