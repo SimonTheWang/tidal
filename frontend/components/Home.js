@@ -11,7 +11,7 @@ const DATA = [
     task: 'Clean a public area',
     photo:'https://image.freepik.com/free-photo/woman-volunteer-cleaning-up-trash-park-picking-up-garbage-outdoors_106029-69.jpg',
     id: '2',
-    contributors: 7,
+    contributors: 8,
     color:'#5C76FF',
     
   },

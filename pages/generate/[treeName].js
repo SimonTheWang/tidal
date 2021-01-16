@@ -31,7 +31,7 @@ export default function Tree(props) {
   function populateTree(num) {
     if (!elements.length) {
       let arr = []
-      let maxColumn = Math.floor(Math.log2(num)).toString()
+      let maxColumn = Math.ceil(Math.sqrt(num))
     
       // once for each column
       for (let colNum=0;colNum<Math.max(maxColumn,1);colNum++) {
@@ -77,7 +77,7 @@ export default function Tree(props) {
              onClick={handleCloseModal}>
               close
             </button>
-        </ReactModal>`
+        </ReactModal>
       </div>
 
       <div style={{ height: 1000, width: 500, paddingLeft: 25}} hidden={showModal}>
