@@ -27,7 +27,7 @@ const screenOptions = {
     headerTintColor: 'white',
     headerTitleStyle: {
       fontWeight: '900',
-      fontFamily: 'Montserrat',
+      //fontFamily: 'Montserrat',
     },
   },
   create: {
@@ -37,9 +37,6 @@ const screenOptions = {
     headerTintColor: 'white',
     headerTitleStyle: {
       fontWeight: '900'
-    },
-    font:{
-      fontFamily: 'Montserrat'
     }
   }
 }

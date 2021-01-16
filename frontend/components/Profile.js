@@ -63,9 +63,13 @@ export const Profile = (props) => {
 			<FadeInView>
 				<Image source={require('../assets/wave.png')} style={styles.image}></Image>
 			</FadeInView>
-			<Avatar.Text size={48} label="SW" />
-			<Text style={styles.color}>{userData.username}</Text>
-			<Text style={styles.color}>{userData.email}</Text>
+			<View style = {{flex:1, flexDirection:'row'}}>
+				<Avatar.Text size={48} label="SW" />
+				<View>
+					<Text style={styles.color}>{userData.username}</Text>
+					<Text style={styles.color}>{userData.email}</Text>
+				</View>
+			</View>
 			<DataTable style={styles.color}>
 				<DataTable.Header>
 					<DataTable.Title><Text style={styles.color}>Achievements</Text></DataTable.Title>
@@ -142,7 +146,7 @@ const styles = StyleSheet.create({
 	  },
 	color: {
 		color:'#FFFFFF',
-		fontFamily: 'Montserrat',
+		//fontFamily: 'Montserrat',
 	},
 	card: {
 		width: 300,

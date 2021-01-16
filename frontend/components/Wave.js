@@ -25,7 +25,7 @@ const styles = StyleSheet.create({
   },
   textArea:{
     backgroundColor: '#1900B5',
-    fontFamily: 'Montserrat',
+    //fontFamily: 'Montserrat',
   },
   color:{
     color: 'white',
