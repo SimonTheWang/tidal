@@ -44,7 +44,7 @@ export default function Tree(props) {
         </ReactModal>`
       </div>
 
-      <div style={{ height: 1000, width: 1000, paddingLeft: 25}} hidden={showModal}>
+      <div style={{ height: 1000, width: 500, paddingLeft: 25}} hidden={showModal}>
         <ReactFlow elements={elements} onLoad={onLoad} onElementClick={onNodeClick}>
           {/* <MiniMap
             nodeColor={(node) => {

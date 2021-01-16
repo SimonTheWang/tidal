@@ -5,20 +5,11 @@ import {
 import { WebView } from 'react-native-webview';
 
 export const ViewWave = ({navigation, route}) => {
-  const mainPath = 'https:tidal-six.vercel.app/generate/'
-  
-  const curentUri = mainPath + '' + '?num=' + ''
-
+  const mainPath = 'https://tidal-six.vercel.app/generate/'
+  const curentUri = mainPath + route.params.data.task + '?num=' + (route.params.data.contributors? route.params.data.contributors: '25')
+  console.log(curentUri)
 	return (
-    <View style={styles.container}>
-      <Image source={require('../assets/wave.png')} style={styles.image}></Image>
-      {/* webview here */}
-      <Text>{route.params.data.author}</Text>
-      <Text>{route.params.data.id}</Text>
-      <Text>{route.params.data.task}</Text>
-      {/* etc... */}
-    </View>
-    // <WebView source={{ uri: curentUri}}></WebView> 
+    <WebView source={{ uri: curentUri}}></WebView> 
 	)
 }
 
