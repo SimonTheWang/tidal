@@ -6,21 +6,24 @@ import { Wave } from './Wave';
 
 const DATA = [
   {
-    date: '2021-01-09',
-    author: 'John Doe',
-    task: 'planted a tree',
+    date: '2021-01-16',
+    author: 'Mackenzie',
+    task: 'Let someone know you appreciate them',
+    photo:'https://picsum.photos/700',
     id: '1'
   },
   {
-    date: '2021-01-04',
-    author: 'John Doe',
-    task: 'cleaned a park',
+    date: '2021-01-15',
+    author: 'Freddie',
+    task: 'Clean a public area',
+    photo:'https://image.freepik.com/free-photo/woman-volunteer-cleaning-up-trash-park-picking-up-garbage-outdoors_106029-69.jpg',
     id: '2'
   },
   {
-    date: '2021-01-03',
-    author: 'John Doe',
-    task: 'told someone they loved them',
+    date: '2021-01-16',
+    author: 'Simon',
+    task: 'Plant something',
+    photo:'https://picsum.photos/700',
     id: '3'
   },
 ];

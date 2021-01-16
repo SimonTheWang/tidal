@@ -1,6 +1,6 @@
 import React from 'react';
 import {
-  StyleSheet, Text, View, ImageBackground, TouchableOpacity, ScrollView
+  StyleSheet, Text, View, ImageBackground, TouchableOpacity, ScrollView, Image
 } from 'react-native';
 
 const TASKS = [
@@ -31,11 +31,10 @@ export const Choose = ({navigation}) => {
 
   return (
     <View style={styles.container}>
-      <ImageBackground source={require('../assets/wave.png')} style={styles.image}>
+    <Image source={require('../assets/wave.png')} style={styles.image}></Image>
 				<View style={{alignItems: 'center', justifyContent: 'center'}}>
 					{tasks}
 				</View>
-      </ImageBackground>
     </View>
   );
 };
@@ -64,7 +63,10 @@ const styles = StyleSheet.create({
   },
   image: {
     flex: 1,
-    resizeMode: 'cover',
-    justifyContent: 'center'
+    resizeMode: "cover",
+    justifyContent: "center",
+    position: 'absolute',
+    top: 200,
+    left: -375
   },
 });
