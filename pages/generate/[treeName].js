@@ -81,6 +81,8 @@ export default function Tree(props) {
             content: {
               left: '0',
               right: '0',
+              bottom: '0',
+              top: '0',
               backgroundImage: 'url(https://cdn.discordapp.com/attachments/681368843951538206/800133606428377158/wave.png)'
             }
           }}
@@ -98,7 +100,7 @@ export default function Tree(props) {
             </span>
             <hr/>
           
-            <span style={{ fontWeight: 'bold', WebkitTextFillColor: 'white', WebkitTextStrokeColor: 'black', WebkitTextStroke: '1px'}}>
+            <span style={{ fontSize: 'large', fontWeight: 'bold', WebkitTextFillColor: 'white', WebkitTextStrokeColor: 'black', WebkitTextStroke: '1px'}}>
               {currentNode.location} | {currentNode.date}
               <img style={{ position: 'relative', top: 15}} src="https://img.icons8.com/clouds/64/000000/worldwide-location.png"/>
             </span>
