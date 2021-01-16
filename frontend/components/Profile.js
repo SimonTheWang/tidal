@@ -36,7 +36,7 @@ export const Profile = (props) => {
 			<FadeInView>
 				<Image source={require('../assets/wave.png')} style={styles.image}></Image>
 			</FadeInView>
-			<Avatar.Text size={48} label="JD" />
+			<Avatar.Text size={48} label="SW" />
 			<Text>{userData.username}</Text>
 			<Text>{userData.email}</Text>
 			<Text></Text>
@@ -64,7 +64,7 @@ export const Profile = (props) => {
 const getUserData = (username) => {
 	// return null; add API get endpoint
 	return {
-		email: "Johndoe@email.com",
+		email: "SimonWang@email.com",
 		username: username,
 		password: "password",
 		peopleInspired: 183,
@@ -75,7 +75,7 @@ const getUserData = (username) => {
 				task: "planting a tree",
 				userId: "12345",
 				picture: "string",
-				time: "Jan 1st 2021",
+				time: "Jan 15th 2021",
 				left: null,
 				right: null,
 			}

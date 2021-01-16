@@ -20,7 +20,7 @@ export const Welcome = (props) => {
       <View style={styles.body}>
           {
             appState == AppState.HOME ? <Home></Home> :
-            appState == AppState.PROFILE ? <Profile username = 'John Doe'></Profile> : 
+            appState == AppState.PROFILE ? <Profile username = 'Simon Wang'></Profile> : 
             <Text>monkaS</Text>
           }
         </View>
