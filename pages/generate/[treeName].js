@@ -110,7 +110,7 @@ export default function Tree(props) {
         </ReactModal>
       </div>
 
-      <div style={{ height: 1000, width: 500, backgroundImage: 'url(https://cdn.discordapp.com/attachments/681368843951538206/800133606428377158/wave.png)'}} hidden={showModal}>
+      <div style={{ height: 2900, width: 1440, backgroundColor: 'lightblue'}} hidden={showModal}>
         <ReactFlow elements={elements} onLoad={onLoad} onElementClick={onNodeClick}>
           {/* <Background
             variant="lines"
@@ -118,7 +118,7 @@ export default function Tree(props) {
             gap={12}
             size={1}
           /> */}
-          <Controls />
+          {/* <Controls /> */}
         </ReactFlow>
       </div>
     </>
