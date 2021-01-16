@@ -1,6 +1,5 @@
 import React from 'react';
-import {
-   Button, Card, Title, Paragraph
+import { Card, Title, Paragraph
 } from 'react-native-paper';
 import { StyleSheet } from 'react-native';
 
@@ -10,8 +9,9 @@ export const Wave = (props) => {
     <Card style={styles.card}>
       <Card.Cover source={{ uri: props.wave.photo }}/>
       <Card.Content style={{ backgroundColor: props.wave.color}}>
-        <Title style={styles.color}>{`${props.wave.task} - ${props.wave.author}`}</Title>
-        <Paragraph style={styles.color}>{props.wave.date + "                       contributors: "+ props.wave.contributors}</Paragraph>
+        <Title style={styles.color}>{"Started by: " + props.wave.author}</Title>
+        <Title style={styles.color}>{"Task: " + props.wave.task}</Title>
+        <Paragraph style={styles.color}>{props.wave.date + "                       Contributors: "+ props.wave.contributors}</Paragraph>
       </Card.Content>
 
     </Card>
@@ -25,7 +25,7 @@ const styles = StyleSheet.create({
   },
   textArea:{
     backgroundColor: '#1900B5',
-    fontFamily: 'Montserrat'
+    fontFamily: 'Montserrat',
   },
   color:{
     color: 'white',

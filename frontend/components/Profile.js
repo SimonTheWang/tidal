@@ -13,28 +13,28 @@ const FadeInView = (props) => {
 			x_change,
 			{
 			toValue: -250,
-			duration: 500,
+			duration: 250,
 			useNativeDriver: true
 			}),
 		Animated.timing(		
 			y_change,
 			{
 			toValue: -250,
-			duration: 500,
+			duration: 250,
 			useNativeDriver: true
 			}),
 		Animated.timing(		
 			x_change,
 			{
 			toValue: -500,
-			duration: 500,
+			duration: 250,
 			useNativeDriver: true
 			}),
 		Animated.timing(		
 			y_change,
 			{
 			toValue: -500,
-			duration: 500,
+			duration: 250,
 			useNativeDriver: true
 			}),
 		]
@@ -141,7 +141,8 @@ const styles = StyleSheet.create({
 		backgroundColor: '#1900B5',
 	  },
 	color: {
-		color:'#FFFFFF'
+		color:'#FFFFFF',
+		fontFamily: 'Montserrat',
 	},
 	card: {
 		width: 300,
