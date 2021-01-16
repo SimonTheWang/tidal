@@ -4,38 +4,17 @@ import ReactFlow, { Background, MiniMap } from 'react-flow-renderer'
 const Chance = require('chance').Chance()
 
 export default function Tree(props) {
-  var elements = populateTree(props.query.num? props.query.num : 25)
-  // [
-  //   {
-  //     id: '1',
-  //     type: 'input', // input node
-  //     data: { label: 'Input Node' },
-  //     position: { x: 250, y: 25 },
-  //   },
-  //   // default node
-  //   {
-  //     id: '2',
-  //     // you can also pass a React component as a label
-  //     data: { label: <div>Default Node</div> },
-  //     position: { x: 100, y: 125 },
-  //   },
-  //   {
-  //     id: '3',
-  //     type: 'output', // output node
-  //     data: { label: 'Output Node' },
-  //     position: { x: 250, y: 250 },
-  //   },
-  //   // animated edge
-  //   { id: 'e1-2', source: '1', target: '2', animated: true },
-  //   { id: 'e2-3', source: '2', target: '3' },
-  // ];
+  var elements = populateTree(props.query.num? (props.query.num>200? 200 : props.query.num) : 25)
+  const onLoad = (reactFlowInstance) => {
+    reactFlowInstance.fitView();
+  }
 
   return (
     <>
-      <p>cliiiiiiive</p>
-      <div style={{ height: 1000, width: 1000 }}>
-        <ReactFlow elements={elements}>
-          <MiniMap
+      <p>{props.query.treeName}</p>
+      <div style={{ height: 1000, width: 1000, paddingLeft: 25 }}>
+        <ReactFlow elements={elements} onLoad={onLoad}>
+          {/* <MiniMap
             nodeColor={(node) => {
               switch (node.type) {
                 case 'input': return 'red';
@@ -44,12 +23,15 @@ export default function Tree(props) {
                 default: return 'rgb(0,255,255)';
               }
             }}
-          />
+            style={{Left: 0}}
+          /> */}
         </ReactFlow>
       </div>
     </>
   )
 }
+
+
 
 export async function getServerSideProps(context) {
   const params = context.query
@@ -62,21 +44,19 @@ export async function getServerSideProps(context) {
 
 function populateTree(num) {
   var elements = []
-
-  var maxColumn = Math.floor(Math.log2(num)).toString()
+  let maxColumn = Math.floor(Math.log2(num)).toString()
 
   // once for each column
-  for (let x=0;x<maxColumn;x++) {
+  for (let colNum=0;colNum<maxColumn;colNum++) {
     //once for each element in column 
-    for (let y=0;y<2**x;y++) {
-      let el = {
+    for (let y=0;y<2**colNum;y++) {
+      elements.push({
         id: elements.length.toString(),
-        position: { x: x*200+100, y: y*100 },
+        position: { x: colNum*200, y: 2**colNum/2*-100 + y*100},
         data: {label: Chance.name()},
         targetPosition: 'left',
         sourcePosition: 'right'
-      }
-      elements.push(el)
+      })
     }
   }
 
@@ -91,4 +71,9 @@ function populateTree(num) {
   }
 
   return elements
+}
+
+function setSpacing(maxCol, currentCol, currentItem) {
+  
+  return {}
 }
