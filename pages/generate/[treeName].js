@@ -1,7 +1,9 @@
 import React, { useState } from 'react'
 import ReactFlow, { Background, MiniMap, Controls } from 'react-flow-renderer'
 import ReactModal from 'react-modal';
+import Image from 'next/image'
 
+var pictureLinks = require('../../utils/pictures')
 const Chance = require('chance').Chance()
 var elements = []
 
@@ -43,9 +45,9 @@ export default function Tree(props) {
             position: { x: colNum*200, y: 2**colNum/2*-100 + y*100},
             data: {
               label: (colNum==0?  props.query.root? props.query.root:Chance.name() : Chance.name()),
-              date: Chance.date({string: true, year: 2021}),
+              date: colNum==0? (props.query.date? props.query.date:Chance.date({string: true, year: 2021}) ) : Chance.date({string: true, year: 2021}),
               location: Chance.country({ full: true }),
-              url: null
+              url: pictureLinks[Math.min(colNum-1,pictureLinks.length)]
             },
             targetPosition: 'left',
             sourcePosition: 'right',
@@ -88,9 +90,9 @@ export default function Tree(props) {
           </span>
           <hr/>
           <span>{currentNode.location} | {currentNode.date}</span>
-          <div style={{overflowX: 'hidden'}}>
+          <div style={{overflowX: 'hidden', overflowY: 'hidden'}}>
             <img
-              style={{display: 'block', margin: '0 auto'}}
+              style={{display: 'block', margin: '0 auto', maxwidth: '500', height: 'auto'}}
               src={currentNode.url? currentNode.url:"https://img.icons8.com/cute-clipart/256/000000/double-tick.png"}
             />
           </div>
