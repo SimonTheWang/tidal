@@ -31,7 +31,7 @@ export default function Tree(props) {
   function populateTree(num) {
     if (!elements.length) {
       let arr = []
-      let maxColumn = Math.floor(Math.sqrt(num+1))
+      let maxColumn = Math.round(Math.sqrt(num))
     
       // once for each column
       for (let colNum=0;colNum<Math.max(maxColumn,1);colNum++) {
