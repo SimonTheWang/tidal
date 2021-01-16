@@ -46,7 +46,7 @@ const styles = StyleSheet.create({
     resizeMode: "cover",
     justifyContent: "center",
     position: 'absolute',
-    top: 200,
-    left: -375
+		top: 200,
+		left: -375
   },
 });

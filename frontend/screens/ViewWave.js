@@ -1,6 +1,6 @@
 import React from 'react';
 import {
-  StyleSheet, Text, View, ImageBackground, TouchableOpacity
+  StyleSheet, View, ImageBackground,
 } from 'react-native';
 
 export const ViewWave = ({navigation, route}) => {

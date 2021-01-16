@@ -29,6 +29,5 @@ const styles = StyleSheet.create({
   },
   color:{
     color: 'white',
-    fontFamily: 'Montserrat'
   }
 });
