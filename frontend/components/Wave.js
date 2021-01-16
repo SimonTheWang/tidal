@@ -4,8 +4,8 @@ import { Card, Title, Paragraph
 import { StyleSheet, Button } from 'react-native';
 
 export const Wave = (props) => {
-    function handleClick(event) {
-      props.onChildClick()
+    function handleClick() {
+      props.onChildClick(props.wave)
     }
   return (
       <Card onPress={handleClick} style={styles.card}>

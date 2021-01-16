@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import {
-  StyleSheet, View, Image,
+  StyleSheet, View, Image, Text
 } from 'react-native';
 import { WebView } from 'react-native-webview';
 
@@ -10,11 +10,15 @@ export const ViewWave = ({navigation, route}) => {
   const curentUri = mainPath + '' + '?num=' + ''
 
 	return (
-    // <View style={styles.container}>
-    //   <Image source={require('../assets/wave.png')} style={styles.image}></Image>
-    //   {/* webview here */}
-    // </View>
-    <WebView source={{ uri: curentUri}}></WebView> 
+    <View style={styles.container}>
+      <Image source={require('../assets/wave.png')} style={styles.image}></Image>
+      {/* webview here */}
+      <Text>{route.params.data.author}</Text>
+      <Text>{route.params.data.id}</Text>
+      <Text>{route.params.data.task}</Text>
+      {/* etc... */}
+    </View>
+    // <WebView source={{ uri: curentUri}}></WebView> 
 	)
 }
 
