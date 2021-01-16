@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useRef } from 'react'
 import { Animated,Text, View  } from 'react-native';
-import { StyleSheet, Image, FlatList, } from 'react-native';
+import { StyleSheet, Image, FlatList, Easing } from 'react-native';
 import {Avatar, DataTable} from 'react-native-paper';
 import { Wave } from './Wave';
 
@@ -12,30 +12,72 @@ const FadeInView = (props) => {
 		Animated.timing(		
 			x_change,
 			{
-			toValue: -250,
-			duration: 500,
-			useNativeDriver: true
+			toValue: -100,
+			duration: 100,
+			useNativeDriver: true,
 			}),
 		Animated.timing(		
 			y_change,
 			{
-			toValue: -250,
-			duration: 500,
-			useNativeDriver: true
+			toValue: -100,
+			duration: 150,
+			useNativeDriver: true,
 			}),
 		Animated.timing(		
 			x_change,
 			{
-			toValue: -500,
-			duration: 500,
-			useNativeDriver: true
+			toValue: -200,
+			duration: 150,
+			useNativeDriver: true,
 			}),
 		Animated.timing(		
 			y_change,
 			{
-			toValue: -500,
-			duration: 500,
-			useNativeDriver: true
+			toValue: -200,
+			duration: 150,
+			useNativeDriver: true,
+			}),
+		Animated.timing(		
+			x_change,
+			{
+			toValue: -300,
+			duration: 150,
+			useNativeDriver: true,
+			}),
+		Animated.timing(		
+			y_change,
+			{
+			toValue: -150,
+			duration: 150,
+			useNativeDriver: true,
+			}),
+		Animated.timing(		
+			x_change,
+			{
+			toValue: -200,
+			duration: 150,
+			useNativeDriver: true,
+			}),
+		Animated.timing(		
+			y_change,
+			{
+			toValue: -250,
+			duration: 150,
+			useNativeDriver: true,
+			}),
+		Animated.timing(		
+			x_change,
+			{
+			toValue: -300,
+			duration: 150,
+			useNativeDriver: true,
+			}),
+		Animated.timing(		
+			y_change,
+			{
+			toValue: -350,
+			duration: 150,
+			useNativeDriver: true,
 			}),
 		]
 	).start();
@@ -63,9 +105,13 @@ export const Profile = (props) => {
 			<FadeInView>
 				<Image source={require('../assets/wave.png')} style={styles.image}></Image>
 			</FadeInView>
-			<Avatar.Text size={48} label="SW" />
-			<Text style={styles.color}>{userData.username}</Text>
-			<Text style={styles.color}>{userData.email}</Text>
+			<View style = {{flex:1, flexDirection:'row'}}>
+				<Avatar.Text size={48} label="SW" />
+				<View>
+					<Text style={styles.color}>{userData.username}</Text>
+					<Text style={styles.color}>{userData.email}</Text>
+				</View>
+			</View>
 			<DataTable style={styles.color}>
 				<DataTable.Header>
 					<DataTable.Title><Text style={styles.color}>Achievements</Text></DataTable.Title>
@@ -105,9 +151,9 @@ const getUserData = (username) => {
 		email: "Simonwg2001@email.com",
 		username: username,
 		password: "password",
-		peopleInspired: 183,
-		wavesStarted: 7,
-		contributions: 16,
+		peopleInspired: 0,
+		wavesStarted: 1,
+		contributions: 1,
 		drops: [
 			{
 				date: '2021-01-16',
@@ -141,7 +187,8 @@ const styles = StyleSheet.create({
 		backgroundColor: '#1900B5',
 	  },
 	color: {
-		color:'#FFFFFF'
+		color:'#FFFFFF',
+		//fontFamily: 'Montserrat',
 	},
 	card: {
 		width: 300,

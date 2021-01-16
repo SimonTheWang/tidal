@@ -1,6 +1,6 @@
 import React from 'react';
 import {
-  StyleSheet, Text, View, ImageBackground, TouchableOpacity
+  StyleSheet, View, ImageBackground,
 } from 'react-native';
 
 export const ViewWave = ({navigation, route}) => {
@@ -22,6 +22,7 @@ const styles = StyleSheet.create({
     flex: 1,
     resizeMode: 'cover',
     justifyContent: 'center'
+    
 	},
 	button: {
     borderRadius: 8,
@@ -32,7 +33,9 @@ const styles = StyleSheet.create({
     width: 300
   },
   buttonText: {
+    //fontFamily: 'Montserrat',
     color: 'white',
-    textAlign: 'center'
+    textAlign: 'center',
   },
+
 })
