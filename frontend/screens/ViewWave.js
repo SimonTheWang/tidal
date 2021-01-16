@@ -2,11 +2,12 @@ import React, { useEffect } from 'react';
 import {
   StyleSheet, View, Image, Text
 } from 'react-native';
+import { WebView } from 'react-native-webview';
 
 export const ViewWave = ({navigation, route}) => {
-  useEffect(() => {
-    console.log(route.params)
-  }, [])
+  const mainPath = 'https:tidal-six.vercel.app/generate/'
+  
+  const curentUri = mainPath + '' + '?num=' + ''
 
 	return (
     <View style={styles.container}>
@@ -17,6 +18,7 @@ export const ViewWave = ({navigation, route}) => {
       <Text>{route.params.data.task}</Text>
       {/* etc... */}
     </View>
+    // <WebView source={{ uri: curentUri}}></WebView> 
 	)
 }
 
