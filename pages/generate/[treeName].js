@@ -98,7 +98,7 @@ export default function Tree(props) {
             </span>
             <hr/>
           
-            <span style={{ fontWeight: 'bold', WebkitTextFillColor: 'white', WebkitTextStrokeColor: 'black'}}>
+            <span style={{ fontWeight: 'bold', WebkitTextFillColor: 'white', WebkitTextStrokeColor: 'black', WebkitTextStroke: '1px'}}>
               {currentNode.location} | {currentNode.date}
               <img style={{ position: 'relative', top: 15}} src="https://img.icons8.com/clouds/64/000000/worldwide-location.png"/>
             </span>
