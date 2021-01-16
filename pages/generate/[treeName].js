@@ -86,13 +86,20 @@ export default function Tree(props) {
           <br/>
           <br/>
           <span>
+            <img style={{ position: 'relative', top: 5}} src="https://img.icons8.com/ios/32/000000/user-male-circle.png"/>
+            &nbsp;
             <b>{currentNode.label}</b>
           </span>
           <hr/>
-          <span>{currentNode.location} | {currentNode.date}</span>
+        
+          <span style={{}}>
+            {currentNode.location} | {currentNode.date}
+            <img style={{ position: 'relative', top: 15}} src="https://img.icons8.com/clouds/64/000000/worldwide-location.png"/>
+          </span>
+          <hr/>
           <div style={{overflowX: 'hidden', overflowY: 'hidden'}}>
             <img
-              style={{display: 'block', margin: '0 auto', width: 'auto', height: 'auto'}}
+              style={{ margin: '0 auto', height: '100%', width: '100%'}}
               src={currentNode.url? currentNode.url:"https://img.icons8.com/cute-clipart/256/000000/double-tick.png"}
             />
           </div>
