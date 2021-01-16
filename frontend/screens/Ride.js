@@ -1,30 +1,29 @@
 import React from 'react';
 import {
-  StyleSheet, Text, View, ImageBackground, TouchableOpacity, ScrollView
+  StyleSheet, Text, View, Image, TouchableOpacity,
 } from 'react-native';
 
 export const Ride = ({navigation, route}) => {
 	return (
 		<View style={styles.container}>
-			<ImageBackground source={require('../assets/wave.png')} style={styles.image}>
-        <View style={{alignItems: 'center'}}>
-          <TouchableOpacity onPress={() => {
-            navigation.navigate('Wave.io')
-          }}>
-            <View style={styles.button}>
-              <Text style={styles.buttonText}>Copy link</Text>
-            </View>
-          </TouchableOpacity>
-          <TouchableOpacity onPress={() => {
-            navigation.navigate('Wave.io')
-          }}>
-            <View style={styles.button}>
-              <Text style={styles.buttonText}>Let us do the job</Text>
-            </View>
-          </TouchableOpacity>
-        </View>
-  		</ImageBackground>
-	</View>
+			<Image source={require('../assets/wave.png')} style={styles.image}></Image>
+      <View style={{alignItems: 'center'}}>
+        <TouchableOpacity onPress={() => {
+          navigation.navigate('Wave.io')
+        }}>
+          <View style={styles.button}>
+            <Text style={styles.buttonText}>Copy link</Text>
+          </View>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => {
+          navigation.navigate('Wave.io')
+        }}>
+          <View style={styles.button}>
+            <Text style={styles.buttonText}>Let us do the job</Text>
+          </View>
+        </TouchableOpacity>
+      </View>
+	  </View>
 	)
 }
 
@@ -35,8 +34,11 @@ const styles = StyleSheet.create({
 	},
 	image: {
     flex: 1,
-    resizeMode: 'cover',
-    justifyContent: 'center'
+    resizeMode: "cover",
+    justifyContent: "center",
+    position: 'absolute',
+    top: 200,
+    left: -375
 	},
 	button: {
     borderRadius: 8,

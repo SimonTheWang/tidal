@@ -1,67 +1,95 @@
 import React, { useState, useEffect } from 'react';
 import {
-  StyleSheet, Text, View, ImageBackground, TouchableOpacity
+  StyleSheet, Text, View, Image, TouchableOpacity
 } from 'react-native';
 import { Camera } from 'expo-camera';
 
 export const TakePicture = ({navigation, route}) => {
 	const [hasPermission, setHasPermission] = useState(null);
-	  const [type, setType] = useState(Camera.Constants.Type.back);
-	  useEffect(() => {
+	const [picture, setPicture] = useState(null)
+	let camera = null
+
+	useEffect(() => {
 		(async () => {
-		  const { status } = await Camera.requestPermissionsAsync();
-		  setHasPermission(status === 'granted');
+			const { status } = await Camera.requestPermissionsAsync();
+			setHasPermission(status === 'granted');
 		})();
-	  }, []);
+	}, []);
 	
-	  if (hasPermission === null) {
+	if (hasPermission === null) {
 		return <View />;
-	  }
-	  if (hasPermission === false) {
+	}
+	if (hasPermission === false) {
 		return <Text>No access to camera</Text>;
-	  }
+	}
+
 	return (
-		<View style={styles.container}>      
-			<Camera style={styles.camera} type={type}>
-				<View style={styles.buttonContainer}>
-					<TouchableOpacity
-						style={styles.button}
-						onPress={() => {
-						setType(
-							type === Camera.Constants.Type.back
-							? Camera.Constants.Type.front
-							: Camera.Constants.Type.back
-						);
-						}}>
-						<Text style={styles.text}> Flip </Text>
-					</TouchableOpacity>
-				</View>
-      		</Camera>
-			<ImageBackground source={require('../assets/wave.png')} style={styles.image}>
-				<Text>
-					User has chosen {route.params.task}
-				</Text>
-				<TouchableOpacity onPress={() => {
-					navigation.navigate('Ride')
-				}}>
-					<View style={styles.button}>
-						<Text style={styles.buttonText}>DONE</Text>
+		<View style={styles.container}>
+			<Image source={require('../assets/wave.png')} style={styles.image}></Image>
+			{
+				picture ? 
+
+				<>
+					<View style={styles.cameraContainer}>
+						<Image style={{width: "100%", height: "100%"}} source={{uri: picture.uri}}></Image>
 					</View>
-				</TouchableOpacity>
-			</ImageBackground>
-	</View>
+					<TouchableOpacity onPress={() => {
+						navigation.navigate('Ride')
+					}}>
+						<View style={styles.button}>
+							<Text style={styles.buttonText}>Ride the wave!</Text>
+						</View>
+					</TouchableOpacity>
+					<TouchableOpacity onPress={() => {
+						setPicture(null)
+					}}>
+						<View style={styles.button}>
+							<Text style={styles.buttonText}>Retake picture</Text>
+						</View>
+					</TouchableOpacity> 
+				</ >
+					
+				:
+
+				<>
+					<View style={styles.cameraContainer}>
+						<Camera style={styles.camera} type={Camera.Constants.Type.back} ref={(ref) => {
+							camera = ref
+						}}>
+						</Camera>
+					</View>
+					<TouchableOpacity onPress={async () => {
+						setPicture(await camera.takePictureAsync())
+					}}>
+						<View style={styles.button}>
+							<Text style={styles.buttonText}>Take Picture</Text>
+						</View>
+					</TouchableOpacity>
+				</ >
+			}
+		</View>
 	)
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
+    alignItems: 'center',
 	},
 	image: {
     flex: 1,
-    resizeMode: 'cover',
-    justifyContent: 'center'
+    resizeMode: "cover",
+    justifyContent: "center",
+    position: 'absolute',
+    top: 200,
+    left: -375
+	},
+	cameraContainer: {
+		borderColor: "#5CCEFF",
+		borderWidth: 10,
+		height: 300,
+		width: 300,
+		marginVertical: "20%"
 	},
 	button: {
     borderRadius: 8,
@@ -75,7 +103,7 @@ const styles = StyleSheet.create({
     color: 'white',
     textAlign: 'center'
   },
-  camera:{
-	  height: 300
+  camera: {
+		height: "100%",
   }
 })
