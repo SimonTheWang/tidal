@@ -80,7 +80,7 @@ export default function Tree(props) {
           ariaHideApp={false}
           style={{
             content: {
-              backgroundColor: 'lightblue'
+              backgroundImage: 'url(https://cdn.discordapp.com/attachments/681368843951538206/800133606428377158/wave.png)'
             }
           }}
         >
@@ -97,7 +97,7 @@ export default function Tree(props) {
             </span>
             <hr/>
           
-            <span style={{}}>
+            <span style={{ fontWeight: 'bold', WebkitTextFillColor: 'white'}}>
               {currentNode.location} | {currentNode.date}
               <img style={{ position: 'relative', top: 15}} src="https://img.icons8.com/clouds/64/000000/worldwide-location.png"/>
             </span>
