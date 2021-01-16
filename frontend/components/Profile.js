@@ -37,24 +37,24 @@ export const Profile = (props) => {
 				<Image source={require('../assets/wave.png')} style={styles.image}></Image>
 			</FadeInView>
 			<Avatar.Text size={48} label="SW" />
-			<Text>{userData.username}</Text>
-			<Text>{userData.email}</Text>
+			<Text style={styles.color}>{userData.username}</Text>
+			<Text style={styles.color}>{userData.email}</Text>
 			<Text></Text>
-			<DataTable>
+			<DataTable style={styles.color}>
 				<DataTable.Header>
-				<DataTable.Title>Achievements</DataTable.Title>
+				<DataTable.Title><Text style={styles.color}>Achievements</Text></DataTable.Title>
 				</DataTable.Header>
 				<DataTable.Row>
-				<DataTable.Cell>People Inspired</DataTable.Cell>
-				<DataTable.Cell numeric>{userData.peopleInspired}</DataTable.Cell>
+				<DataTable.Cell><Text style={styles.color}>People Inspired</Text></DataTable.Cell>
+				<DataTable.Cell numeric><Text style={styles.color}>{userData.peopleInspired}</Text></DataTable.Cell>
 				</DataTable.Row>
 				<DataTable.Row>
-				<DataTable.Cell>Waves Started</DataTable.Cell>
-				<DataTable.Cell numeric>{userData.wavesStarted}</DataTable.Cell>
+				<DataTable.Cell><Text style={styles.color}>Waves Started</Text></DataTable.Cell>
+				<DataTable.Cell numeric><Text style={styles.color}>{userData.wavesStarted}</Text></DataTable.Cell>
 				</DataTable.Row>
 				<DataTable.Row>
-				<DataTable.Cell>Total Contributions</DataTable.Cell>
-				<DataTable.Cell numeric>{userData.contributions}</DataTable.Cell>
+				<DataTable.Cell><Text style={styles.color}>Total Contributions</Text></DataTable.Cell>
+				<DataTable.Cell numeric><Text style={styles.color}>{userData.contributions}</Text></DataTable.Cell>
 				</DataTable.Row>
 			</DataTable>
 		</>
@@ -64,7 +64,7 @@ export const Profile = (props) => {
 const getUserData = (username) => {
 	// return null; add API get endpoint
 	return {
-		email: "SimonWang@email.com",
+		email: "Simonwg2001@email.com",
 		username: username,
 		password: "password",
 		peopleInspired: 183,
@@ -94,5 +94,8 @@ const styles = StyleSheet.create({
 		position: "absolute",
 		top: 200,
 		left: -375
+	},
+	color: {
+		color:'#FFFFFF'
 	},
 });
