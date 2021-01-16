@@ -94,7 +94,7 @@ const FadeInView = (props) => {
   }
 export const Profile = (props) => {
 	const renderItem = ({ item }) => (
-		<Wave wave={item} />
+		<Wave wave={item} onChildClick={props.handleChildClick}/>
 	  );
 	const [userData, setUserData] = useState("");
 	useEffect(() => {
@@ -105,7 +105,7 @@ export const Profile = (props) => {
 			<FadeInView>
 				<Image source={require('../assets/wave.png')} style={styles.image}></Image>
 			</FadeInView>
-			<View style = {{flex:1, flexDirection:'row'}}>
+			<View style = {{flex:1, flexDirection:'row', marginTop: 20}}>
 				<Avatar.Text size={48} label="SW" />
 				<View>
 					<Text style={styles.color}>{userData.username}</Text>

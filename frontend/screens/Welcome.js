@@ -22,7 +22,9 @@ export const Welcome = (props) => {
             appState == AppState.HOME ? <Home handleChildClick={(data) => {
               props.navigation.navigate("ViewWave", {data})
             }} /> :
-            appState == AppState.PROFILE ? <Profile username = 'Simon Wang'></Profile> : 
+            appState == AppState.PROFILE ? <Profile username='Simon Wang' handleChildClick={(data) => {
+              props.navigation.navigate("ViewWave", {data})
+            }} /> : 
             <Text>monkaS</Text>
           }
         </View>
