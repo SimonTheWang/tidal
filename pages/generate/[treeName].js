@@ -3,10 +3,8 @@ import ReactFlow, { Background, MiniMap } from 'react-flow-renderer'
 
 const Chance = require('chance').Chance()
 
-export default function Tree({ posts }) {
-
-
-  var elements = populateTree(16)
+export default function Tree(props) {
+  var elements = populateTree(props.query.num? props.query.num : 25)
   // [
   //   {
   //     id: '1',
@@ -31,7 +29,6 @@ export default function Tree({ posts }) {
   //   { id: 'e1-2', source: '1', target: '2', animated: true },
   //   { id: 'e2-3', source: '2', target: '3' },
   // ];
-  console.log(elements.length)
 
   return (
     <>
@@ -43,7 +40,7 @@ export default function Tree({ posts }) {
               switch (node.type) {
                 case 'input': return 'red';
                 case 'default': return '#00ff00';
-                case 'output': return 'rgb(0,0,255)';
+                case 'output': return 'rgb(0,255,255)';
                 default: return '#eee';
               }
             }}
@@ -56,10 +53,9 @@ export default function Tree({ posts }) {
 
 export async function getServerSideProps(context) {
   const params = context.query
-
   return {
     props: {
-      params,
+      query: params,
     },
   }
 }
