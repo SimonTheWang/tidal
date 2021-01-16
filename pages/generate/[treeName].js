@@ -31,7 +31,7 @@ export default function Tree(props) {
   function populateTree(num) {
     if (!elements.length) {
       let arr = []
-      let maxColumn = Math.ceil(Math.sqrt(num))
+      let maxColumn = Math.floor(Math.sqrt(num+1))
     
       // once for each column
       for (let colNum=0;colNum<Math.max(maxColumn,1);colNum++) {
@@ -80,7 +80,7 @@ export default function Tree(props) {
         </ReactModal>
       </div>
 
-      <div style={{ height: 1000, width: 500, paddingLeft: 25}} hidden={showModal}>
+      <div style={{ height: 1000, width: 500}} hidden={showModal}>
         <ReactFlow elements={elements} onLoad={onLoad} onElementClick={onNodeClick}>
           {/* <MiniMap
             nodeColor={(node) => {
