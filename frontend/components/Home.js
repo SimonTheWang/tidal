@@ -11,7 +11,9 @@ const DATA = [
     task: 'Clean a public area',
     photo:'https://image.freepik.com/free-photo/woman-volunteer-cleaning-up-trash-park-picking-up-garbage-outdoors_106029-69.jpg',
     id: '2',
-    contributors: 7
+    contributors: 7,
+    color:'#5C76FF',
+    
   },
   {
     date: '2021-01-13',
@@ -19,10 +21,12 @@ const DATA = [
     task: 'Medidate',
     photo:'https://i.pinimg.com/originals/e5/a1/71/e5a1710951b72b50e23ab923dc8a7e6a.jpg',
     contributors: 1,
-    id: '3'
+    id: '3',
+    color:'#A45CFF'
   },
   {
     date: '2021-01-16',
+    color:'#EA7EA8',
     author: 'Mackenzie',
     contributors: 61,
     task: 'Let someone know you appreciate them',
@@ -36,6 +40,7 @@ const DATA = [
     task: 'Plant something',
     photo:'https://picsum.photos/700',
     id: '4',
+    color:'#6BCC6C',
     contributors: 1
   },
 ];
