@@ -3,9 +3,10 @@ import ReactFlow, { Background, MiniMap, Controls } from 'react-flow-renderer'
 import ReactModal from 'react-modal';
 
 const Chance = require('chance').Chance()
+var elements = []
 
 export default function Tree(props) {
-  var elements = populateTree(props.query.num? (props.query.num>200? 200 : props.query.num) : 25)
+  populateTree(props.query.num? (props.query.num>200? 200 : props.query.num) : 25)
   
   const onLoad = (reactFlowInstance) => {
     reactFlowInstance.fitView();
@@ -25,6 +26,41 @@ export default function Tree(props) {
   function handleCloseModal() {
     console.log('monkas')
     setShow(false)
+  }
+
+  function populateTree(num) {
+    if (!elements.length) {
+      let arr = []
+      let maxColumn = Math.floor(Math.log2(num)).toString()
+    
+      // once for each column
+      for (let colNum=0;colNum<maxColumn;colNum++) {
+        //once for each element in column 
+        for (let y=0;y<2**colNum;y++) {
+          arr.push({
+            id: arr.length.toString(),
+            position: { x: colNum*200, y: 2**colNum/2*-100 + y*100},
+            data: {label: (colNum==0?  props.query.root : Chance.name())},
+            targetPosition: 'left',
+            sourcePosition: 'right',
+            draggable: false,
+          })
+        }
+      }
+    
+      // for height of last col - 1
+      for (let z=0;z<2**(maxColumn-1)-1;z++) {
+        // add 2 lines
+        for (let a=1;a<3;a++) {
+          arr.push(
+            { id: 'e'+z.toString()+'-'+(a+2*z).toString(), source: z, target: a+2*z, animated: true },
+          )
+        }
+      }
+    
+      elements = arr    
+    }
+
   }
 
   return (
@@ -78,34 +114,3 @@ export async function getServerSideProps(context) {
   }
 }
 
-function populateTree(num) {
-  var elements = []
-  let maxColumn = Math.floor(Math.log2(num)).toString()
-
-  // once for each column
-  for (let colNum=0;colNum<maxColumn;colNum++) {
-    //once for each element in column 
-    for (let y=0;y<2**colNum;y++) {
-      elements.push({
-        id: elements.length.toString(),
-        position: { x: colNum*200, y: 2**colNum/2*-100 + y*100},
-        data: {label: Chance.name()},
-        targetPosition: 'left',
-        sourcePosition: 'right',
-        draggable: false,
-      })
-    }
-  }
-
-  // for height of last col - 1
-  for (let z=0;z<2**(maxColumn-1)-1;z++) {
-    // add 2 lines
-    for (let a=1;a<3;a++) {
-      elements.push(
-        { id: 'e'+z.toString()+'-'+(a+2*z).toString(), source: z, target: a+2*z, animated: true },
-      )
-    }
-  }
-
-  return elements
-}

@@ -6,7 +6,7 @@ import { WebView } from 'react-native-webview';
 
 export const ViewWave = ({navigation, route}) => {
   const mainPath = 'https://tidal-six.vercel.app/generate/'
-  const curentUri = mainPath + route.params.data.task + '?num=' + (route.params.data.contributors? route.params.data.contributors: '25')
+  const curentUri = mainPath + route.params.data.task + '?num=' + (route.params.data.contributors? route.params.data.contributors: '25') + '&&root=' + route.params.data.author
   console.log(curentUri)
 	return (
     <WebView source={{ uri: curentUri}}></WebView> 
