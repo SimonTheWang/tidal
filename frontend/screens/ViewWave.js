@@ -5,10 +5,10 @@ import {
 
 export const ViewWave = ({navigation, route}) => {
 	return (
-		<View style={styles.container}>
-			<ImageBackground source={require('../assets/wave.png')} style={styles.image}>
-				// webview here
-			</ImageBackground>
+  <View style={styles.container}>
+    <ImageBackground source={require('../assets/wave.png')} style={styles.image}>
+      // webview here
+    </ImageBackground>
 	</View>
 	)
 }

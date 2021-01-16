@@ -1,19 +1,24 @@
 import React from 'react'
-import ReactFlow, { Background, MiniMap } from 'react-flow-renderer'
+import ReactFlow, { Background, MiniMap, Controls } from 'react-flow-renderer'
 
 const Chance = require('chance').Chance()
 
 export default function Tree(props) {
   var elements = populateTree(props.query.num? (props.query.num>200? 200 : props.query.num) : 25)
+  
   const onLoad = (reactFlowInstance) => {
     reactFlowInstance.fitView();
+  }
+
+  const onNodeClick = (event, element) => {
+    console.log(element)
   }
 
   return (
     <>
       <p>{props.query.treeName}</p>
       <div style={{ height: 1000, width: 1000, paddingLeft: 25 }}>
-        <ReactFlow elements={elements} onLoad={onLoad}>
+        <ReactFlow elements={elements} onLoad={onLoad} onElementClick={onNodeClick}>
           {/* <MiniMap
             nodeColor={(node) => {
               switch (node.type) {
@@ -25,6 +30,12 @@ export default function Tree(props) {
             }}
             style={{Left: 0}}
           /> */}
+          <Background
+            variant="lines"
+            gap={12}
+            size={1}
+          />
+          <Controls />
         </ReactFlow>
       </div>
     </>
@@ -55,7 +66,8 @@ function populateTree(num) {
         position: { x: colNum*200, y: 2**colNum/2*-100 + y*100},
         data: {label: Chance.name()},
         targetPosition: 'left',
-        sourcePosition: 'right'
+        sourcePosition: 'right',
+        draggable: false,
       })
     }
   }
