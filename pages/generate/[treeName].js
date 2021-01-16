@@ -63,9 +63,7 @@ export async function getServerSideProps(context) {
 function populateTree(num) {
   var elements = []
 
-  var currentColumn = 0
   var maxColumn = Math.floor(Math.log2(num)).toString()
-  var currentElement = '0|0'
 
   // once for each column
   for (let x=0;x<maxColumn;x++) {
@@ -73,12 +71,22 @@ function populateTree(num) {
     for (let y=0;y<2**x;y++) {
       let el = {
         id: elements.length.toString(),
-        position: { x: x*200, y: y*100 },
+        position: { x: x*200+100, y: y*100 },
         data: {label: Chance.name()},
         targetPosition: 'left',
         sourcePosition: 'right'
       }
       elements.push(el)
+    }
+  }
+
+  // for height of last col - 1
+  for (let z=0;z<2**(maxColumn-1)-1;z++) {
+    // add 2 lines
+    for (let a=1;a<3;a++) {
+      elements.push(
+        { id: 'e'+z.toString()+'-'+a.toString(), source: z, target: a+2*z, animated: true },
+      )
     }
   }
 
