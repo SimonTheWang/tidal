@@ -33,6 +33,7 @@ const styles = StyleSheet.create({
     width: 300
   },
   buttonText: {
+    //fontFamily: 'Montserrat',
     color: 'white',
     textAlign: 'center',
   },

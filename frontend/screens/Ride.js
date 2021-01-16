@@ -51,6 +51,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center'
   },
   buttonText: {
+    //fontFamily: 'Montserrat',
     color: 'white',
     textAlign: 'center',
     fontSize: 30
