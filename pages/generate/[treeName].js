@@ -61,7 +61,7 @@ export default function Tree(props) {
         // add 2 lines
         for (let a=1;a<3;a++) {
           arr.push(
-            { id: 'e'+z.toString()+'-'+(a+2*z).toString(), source: z, target: a+2*z, animated: true, style: {'stroke': 'rgba(255, 255, 255, 0.75)'} },
+            { id: 'e'+z.toString()+'-'+(a+2*z).toString(), source: z, target: a+2*z, animated: true, style: {'stroke': 'rgba(255, 255, 255)'} },
           )
         }
       }
@@ -88,8 +88,16 @@ export default function Tree(props) {
           }}
         >
             <button
-              onClick={handleCloseModal}>
-                <span>X</span> 
+              onClick={handleCloseModal}
+              style={{
+                backgroundColor: '#2196f3',
+                WebkitTextFillColor: 'white',
+                fontSize: 'large',
+                padding: '7px',
+                borderRadius: '4px',
+                border: 'none'
+              }}>
+                <span>Close</span> 
             </button>
             <br/>
             <br/>
