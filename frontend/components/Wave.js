@@ -5,10 +5,10 @@ import { StyleSheet, Button } from 'react-native';
 
 export const Wave = (props) => {
     function handleClick(event) {
-      onChildClick("poop"); // pass any argument to the callback
+      props.onChildClick()
     }
   return (
-      <Card onClick = {handleClick} style={styles.card}>
+      <Card onPress={handleClick} style={styles.card}>
         <Card.Cover source={{ uri: props.wave.photo }}/>
         <Card.Content style={{ backgroundColor: props.wave.color}}>
           <Title style={styles.color}>{"Started by: " + props.wave.author}</Title>
