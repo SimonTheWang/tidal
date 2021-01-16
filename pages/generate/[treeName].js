@@ -92,12 +92,10 @@ export default function Tree(props) {
           <span>{currentNode.location} | {currentNode.date}</span>
           <div style={{overflowX: 'hidden', overflowY: 'hidden'}}>
             <img
-              style={{display: 'block', margin: '0 auto', maxwidth: '500', height: 'auto'}}
+              style={{display: 'block', margin: '0 auto', width: 'auto', height: 'auto'}}
               src={currentNode.url? currentNode.url:"https://img.icons8.com/cute-clipart/256/000000/double-tick.png"}
             />
           </div>
-
-
         </ReactModal>
       </div>
 

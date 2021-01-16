@@ -20,7 +20,7 @@ const DATA = [
     author: 'Koombaya',
     task: 'Medidate',
     photo:'https://i.pinimg.com/originals/e5/a1/71/e5a1710951b72b50e23ab923dc8a7e6a.jpg',
-    contributors: 1,
+    contributors: 25,
     id: '3',
     color:'#A45CFF'
   },
@@ -41,7 +41,7 @@ const DATA = [
     photo:'https://picsum.photos/700',
     id: '4',
     color:'#6BCC6C',
-    contributors: 1
+    contributors: 32
   },
 ];
 
