@@ -8,25 +8,26 @@ var elements = []
 export default function Tree(props) {
   populateTree(props.query.num? (props.query.num>200? 200 : props.query.num) : 25)
   
+  var [showModal, setShow] = useState(false)
+  var [currentNode, setNode] = useState({})
+
+  // react flow fns 
   const onLoad = (reactFlowInstance) => {
     reactFlowInstance.fitView();
   }
-
   const onNodeClick = (event, element) => {
-    console.log(element)
+    console.log(element.data)
+    setNode(element.data)
     handleOpenModal()
   }
-
-  var [showModal, setShow] = useState(false)
-  
   const handleOpenModal = () => {
     setShow(true)
   }
-
   function handleCloseModal() {
-    console.log('monkas')
     setShow(false)
+    setNode({})
   }
+
 
   function populateTree(num) {
     if (!elements.length) {
@@ -40,7 +41,12 @@ export default function Tree(props) {
           arr.push({
             id: arr.length.toString(),
             position: { x: colNum*200, y: 2**colNum/2*-100 + y*100},
-            data: {label: (colNum==0?  props.query.root : Chance.name())},
+            data: {
+              label: (colNum==0?  props.query.root? props.query.root:Chance.name() : Chance.name()),
+              date: Chance.date({string: true, year: 2021}),
+              location: Chance.country({ full: true }),
+              url: null
+            },
             targetPosition: 'left',
             sourcePosition: 'right',
             draggable: false,
@@ -70,29 +76,31 @@ export default function Tree(props) {
         <ReactModal
           isOpen={showModal}
           ariaHideApp={false}
-          >
-            <p>t cool</p>
-            <button
-             style={{zIndex:0}}
-             onClick={handleCloseModal}>
-              close
-            </button>
+        >
+          <button
+            onClick={handleCloseModal}>
+              <span>X</span> 
+          </button>
+          <br/>
+          <br/>
+          <span>
+            <b>{currentNode.label}</b>
+          </span>
+          <hr/>
+          <span>{currentNode.location} | {currentNode.date}</span>
+          <div>
+            <img
+              style={{display: 'block', margin: '0 auto'}}
+              src={currentNode.url? currentNode.url:"https://img.icons8.com/cute-clipart/512/000000/double-tick.png"}
+            />
+          </div>
+
+
         </ReactModal>
       </div>
 
       <div style={{ height: 1000, width: 500}} hidden={showModal}>
         <ReactFlow elements={elements} onLoad={onLoad} onElementClick={onNodeClick}>
-          {/* <MiniMap
-            nodeColor={(node) => {
-              switch (node.type) {
-                case 'input': return 'red';
-                case 'default': return 'rgb(0,255,255)';
-                case 'output': return 'rgb(0,255,255)';
-                default: return 'rgb(0,255,255)';
-              }
-            }}
-            style={{Left: 0}}
-          /> */}
           <Background
             variant="lines"
             gap={12}
