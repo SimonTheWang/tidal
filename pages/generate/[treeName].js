@@ -79,8 +79,8 @@ export default function Tree(props) {
           ariaHideApp={false}
           style={{
             content: {
-              width: '90%',
-              height: '90%',
+              left: '0',
+              right: '0',
               backgroundImage: 'url(https://cdn.discordapp.com/attachments/681368843951538206/800133606428377158/wave.png)'
             }
           }}
