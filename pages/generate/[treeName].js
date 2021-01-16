@@ -1,5 +1,6 @@
-import React from 'react'
+import React, { useState } from 'react'
 import ReactFlow, { Background, MiniMap, Controls } from 'react-flow-renderer'
+import ReactModal from 'react-modal';
 
 const Chance = require('chance').Chance()
 
@@ -12,12 +13,38 @@ export default function Tree(props) {
 
   const onNodeClick = (event, element) => {
     console.log(element)
+    handleOpenModal()
+  }
+
+  var [showModal, setShow] = useState(false)
+  
+  const handleOpenModal = () => {
+    setShow(true)
+  }
+
+  function handleCloseModal() {
+    console.log('monkas')
+    setShow(false)
   }
 
   return (
     <>
       <p>{props.query.treeName}</p>
-      <div style={{ height: 1000, width: 1000, paddingLeft: 25 }}>
+      <div>
+        <ReactModal
+          isOpen={showModal}
+          ariaHideApp={false}
+          >
+            <p>t cool</p>
+            <button
+             style={{zIndex:0}}
+             onClick={handleCloseModal}>
+              close
+            </button>
+        </ReactModal>`
+      </div>
+
+      <div style={{ height: 1000, width: 1000, paddingLeft: 25}} hidden={showModal}>
         <ReactFlow elements={elements} onLoad={onLoad} onElementClick={onNodeClick}>
           {/* <MiniMap
             nodeColor={(node) => {
