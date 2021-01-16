@@ -13,7 +13,7 @@ export default function App() {
         <Stack.Screen name="Choose" component={Choose} options={{...screenOptions.create, title: "Choose a Task"}} />
         <Stack.Screen name="TakePicture" component={TakePicture} options={{...screenOptions.create, title: "Take a Picture!"}} />
         <Stack.Screen name="Ride" component={Ride} options={{...screenOptions.create, title: "Ride the wave!"}} />
-        <Stack.Screen name="ViewWave" component={ViewWave} options={{...screenOptions.create, title: "Big wave!"}} />
+        <Stack.Screen name="ViewWave" component={ViewWave} options={({ route }) => ({...screenOptions.create, title: route.params.data.task})} />
       </Stack.Navigator>
     </NavigationContainer>
   );

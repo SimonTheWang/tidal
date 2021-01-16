@@ -73,7 +73,6 @@ export default function Tree(props) {
 
   return (
     <>
-      <p>{props.query.treeName}</p>
       <div>
         <ReactModal
           isOpen={showModal}
