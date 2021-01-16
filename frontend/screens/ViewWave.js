@@ -1,13 +1,21 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import {
-  StyleSheet, View, Image,
+  StyleSheet, View, Image, Text
 } from 'react-native';
 
 export const ViewWave = ({navigation, route}) => {
+  useEffect(() => {
+    console.log(route.params)
+  }, [])
+
 	return (
     <View style={styles.container}>
       <Image source={require('../assets/wave.png')} style={styles.image}></Image>
       {/* webview here */}
+      <Text>{route.params.data.author}</Text>
+      <Text>{route.params.data.id}</Text>
+      <Text>{route.params.data.task}</Text>
+      {/* etc... */}
     </View>
 	)
 }
