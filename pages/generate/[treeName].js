@@ -88,10 +88,10 @@ export default function Tree(props) {
           </span>
           <hr/>
           <span>{currentNode.location} | {currentNode.date}</span>
-          <div>
+          <div style={{overflowX: 'hidden'}}>
             <img
               style={{display: 'block', margin: '0 auto'}}
-              src={currentNode.url? currentNode.url:"https://img.icons8.com/cute-clipart/512/000000/double-tick.png"}
+              src={currentNode.url? currentNode.url:"https://img.icons8.com/cute-clipart/256/000000/double-tick.png"}
             />
           </div>
 
