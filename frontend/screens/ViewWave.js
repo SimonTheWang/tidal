@@ -35,9 +35,6 @@ const styles = StyleSheet.create({
   buttonText: {
     color: 'white',
     textAlign: 'center',
-    font:{
-      fontFamily: 'Montserrat'
-    }
   },
 
 })
