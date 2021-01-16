@@ -34,7 +34,7 @@ export default function Tree(props) {
       let maxColumn = Math.floor(Math.log2(num)).toString()
     
       // once for each column
-      for (let colNum=0;colNum<maxColumn;colNum++) {
+      for (let colNum=0;colNum<Math.max(maxColumn,1);colNum++) {
         //once for each element in column 
         for (let y=0;y<2**colNum;y++) {
           arr.push({
