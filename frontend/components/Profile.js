@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useRef } from 'react'
 import { Animated,Text, View  } from 'react-native';
-import { StyleSheet, Image, FlatList, Easing } from 'react-native';
+import { StyleSheet, Image, FlatList} from 'react-native';
 import {Avatar, DataTable} from 'react-native-paper';
 import { Wave } from './Wave';
 

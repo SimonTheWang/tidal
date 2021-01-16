@@ -1,7 +1,7 @@
 import React from 'react';
 import { Card, Title, Paragraph
 } from 'react-native-paper';
-import { StyleSheet, Button } from 'react-native';
+import { StyleSheet} from 'react-native';
 
 export const Wave = (props) => {
     function handleClick() {

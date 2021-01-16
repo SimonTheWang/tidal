@@ -1,6 +1,5 @@
-import React, { useEffect } from 'react';
 import {
-  StyleSheet, View, Image, Text
+  StyleSheet,
 } from 'react-native';
 import { WebView } from 'react-native-webview';
 
