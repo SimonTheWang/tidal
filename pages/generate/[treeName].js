@@ -61,7 +61,7 @@ export default function Tree(props) {
         // add 2 lines
         for (let a=1;a<3;a++) {
           arr.push(
-            { id: 'e'+z.toString()+'-'+(a+2*z).toString(), source: z, target: a+2*z, animated: true },
+            { id: 'e'+z.toString()+'-'+(a+2*z).toString(), source: z, target: a+2*z, animated: true, style: {'stroke': 'rgba(255, 255, 255, 0.75)'} },
           )
         }
       }
@@ -111,13 +111,14 @@ export default function Tree(props) {
         </ReactModal>
       </div>
 
-      <div style={{ height: 1000, width: 500}} hidden={showModal}>
+      <div style={{ height: 1000, width: 500, backgroundImage: 'url(https://cdn.discordapp.com/attachments/681368843951538206/800133606428377158/wave.png)'}} hidden={showModal}>
         <ReactFlow elements={elements} onLoad={onLoad} onElementClick={onNodeClick}>
-          <Background
+          {/* <Background
             variant="lines"
+            color="#ADD8E6"
             gap={12}
             size={1}
-          />
+          /> */}
           <Controls />
         </ReactFlow>
       </div>
