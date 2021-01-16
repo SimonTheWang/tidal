@@ -9,9 +9,9 @@ export const Wave = (props) => {
     
     <Card style={styles.card}>
       <Card.Cover source={{ uri: props.wave.photo }}/>
-      <Card.Content style={{backgroundColor: props.wave.color}}>
+      <Card.Content style={{ backgroundColor: props.wave.color}}>
         <Title style={styles.color}>{`${props.wave.task} - ${props.wave.author}`}</Title>
-        <Paragraph style={styles.color}>{props.wave.date + "                         contributors: "+ props.wave.contributors}</Paragraph>
+        <Paragraph style={styles.color}>{props.wave.date + "                       contributors: "+ props.wave.contributors}</Paragraph>
       </Card.Content>
 
     </Card>
@@ -25,8 +25,10 @@ const styles = StyleSheet.create({
   },
   textArea:{
     backgroundColor: '#1900B5',
+    fontFamily: 'Montserrat'
   },
   color:{
-    color: 'white'
+    color: 'white',
+    fontFamily: 'Montserrat'
   }
 });

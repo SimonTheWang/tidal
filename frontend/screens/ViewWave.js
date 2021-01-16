@@ -22,6 +22,7 @@ const styles = StyleSheet.create({
     flex: 1,
     resizeMode: 'cover',
     justifyContent: 'center'
+    
 	},
 	button: {
     borderRadius: 8,
@@ -33,6 +34,10 @@ const styles = StyleSheet.create({
   },
   buttonText: {
     color: 'white',
-    textAlign: 'center'
+    textAlign: 'center',
+    font:{
+      fontFamily: 'Montserrat'
+    }
   },
+
 })

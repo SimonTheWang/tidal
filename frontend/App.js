@@ -26,14 +26,9 @@ const screenOptions = {
     },
     headerTintColor: 'white',
     headerTitleStyle: {
-      fontWeight: '900'
+      fontWeight: '900',
+      fontFamily: 'Montserrat',
     },
-    
-    // headerBackground: () => {
-    //   return (
-    //     <Image source={{ uri: 'https://upload.wikimedia.org/wikipedia/commons/3/36/Hopetoun_falls.jpg' }} />
-    //   )
-    // }
   },
   create: {
     headerStyle: {
@@ -43,5 +38,8 @@ const screenOptions = {
     headerTitleStyle: {
       fontWeight: '900'
     },
+    font:{
+      fontFamily: 'Montserrat'
+    }
   }
 }
