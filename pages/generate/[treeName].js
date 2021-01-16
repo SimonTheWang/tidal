@@ -69,8 +69,6 @@ export default function Tree(props) {
   )
 }
 
-
-
 export async function getServerSideProps(context) {
   const params = context.query
   return {
@@ -104,15 +102,10 @@ function populateTree(num) {
     // add 2 lines
     for (let a=1;a<3;a++) {
       elements.push(
-        { id: 'e'+z.toString()+'-'+a.toString(), source: z, target: a+2*z, animated: true },
+        { id: 'e'+z.toString()+'-'+(a+2*z).toString(), source: z, target: a+2*z, animated: true },
       )
     }
   }
 
   return elements
-}
-
-function setSpacing(maxCol, currentCol, currentItem) {
-  
-  return {}
 }
