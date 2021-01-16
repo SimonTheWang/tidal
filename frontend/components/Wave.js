@@ -8,10 +8,10 @@ export const Wave = (props) => {
   return (
     <Card style={styles.card}>
       <Card.Content>
-        <Title>{`${props.wave.task}, started by ${props.wave.author}`}</Title>
+        <Title>{`${props.wave.task} - ${props.wave.author}`}</Title>
         <Paragraph>{props.wave.date}</Paragraph>
       </Card.Content>
-      <Card.Cover source={{ uri: 'https://picsum.photos/700' }} />
+      <Card.Cover source={{ uri: props.wave.photo }} />
       <Card.Actions>
         <Button>Keep it going!</Button>
       </Card.Actions>
@@ -20,7 +20,7 @@ export const Wave = (props) => {
 };
 const styles = StyleSheet.create({
   card: {
-    width: '90%',
+    width: 300,
     margin: 10
   },
 });
