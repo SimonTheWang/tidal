@@ -32,16 +32,16 @@ export default function Tree(props) {
 
   return (
     <>
-      <p>wfhoaf</p>
+      <p>cliiiiiiive</p>
       <div style={{ height: 1000, width: 1000 }}>
         <ReactFlow elements={elements}>
           <MiniMap
             nodeColor={(node) => {
               switch (node.type) {
                 case 'input': return 'red';
-                case 'default': return '#00ff00';
+                case 'default': return 'rgb(0,255,255)';
                 case 'output': return 'rgb(0,255,255)';
-                default: return '#eee';
+                default: return 'rgb(0,255,255)';
               }
             }}
           />
