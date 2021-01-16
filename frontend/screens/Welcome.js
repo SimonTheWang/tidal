@@ -19,7 +19,7 @@ export const Welcome = (props) => {
       </Image>
       <View style={styles.body}>
           {
-            appState == AppState.HOME ? <Home></Home> :
+            appState == AppState.HOME ? <Home handleChildClick ={()=>{props.navigation.navigate("ViewWave")}}></Home> :
             appState == AppState.PROFILE ? <Profile username = 'Simon Wang'></Profile> : 
             <Text>monkaS</Text>
           }

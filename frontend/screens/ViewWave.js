@@ -1,15 +1,14 @@
 import React from 'react';
 import {
-  StyleSheet, View, ImageBackground,
+  StyleSheet, View, Image,
 } from 'react-native';
 
 export const ViewWave = ({navigation, route}) => {
 	return (
-  <View style={styles.container}>
-    <ImageBackground source={require('../assets/wave.png')} style={styles.image}>
-      // webview here
-    </ImageBackground>
-	</View>
+    <View style={styles.container}>
+      <Image source={require('../assets/wave.png')} style={styles.image}></Image>
+      {/* webview here */}
+    </View>
 	)
 }
 
@@ -20,9 +19,11 @@ const styles = StyleSheet.create({
 	},
 	image: {
     flex: 1,
-    resizeMode: 'cover',
-    justifyContent: 'center'
-    
+    resizeMode: "cover",
+    justifyContent: "center",
+    position: 'absolute',
+    top: 200,
+    left: -375
 	},
 	button: {
     borderRadius: 8,
@@ -37,5 +38,4 @@ const styles = StyleSheet.create({
     color: 'white',
     textAlign: 'center',
   },
-
 })
