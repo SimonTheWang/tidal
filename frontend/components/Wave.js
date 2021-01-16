@@ -6,15 +6,14 @@ import { StyleSheet } from 'react-native';
 
 export const Wave = (props) => {
   return (
+    
     <Card style={styles.card}>
+    <Card.Cover source={{ uri: props.wave.photo }}/>
       <Card.Content>
         <Title>{`${props.wave.task} - ${props.wave.author}`}</Title>
-        <Paragraph>{props.wave.date}</Paragraph>
+        <Paragraph>{props.wave.date + "                     contributors: "+ props.wave.contributors}</Paragraph>
       </Card.Content>
-      <Card.Cover source={{ uri: props.wave.photo }} />
-      <Card.Actions>
-        <Button>Keep it going!</Button>
-      </Card.Actions>
+      
     </Card>
   );
 };
