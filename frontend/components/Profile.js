@@ -3,6 +3,7 @@ import { Animated,Text, View  } from 'react-native';
 import { StyleSheet, Image, FlatList} from 'react-native';
 import {Avatar, DataTable} from 'react-native-paper';
 import { Wave } from './Wave';
+import * as Font from 'expo-font'
 
 const FadeInView = (props) => {
 	const x_change = useRef(new Animated.Value(0)).current;
@@ -93,6 +94,9 @@ const FadeInView = (props) => {
 	);
   }
 export const Profile = (props) => {
+	Font.useFonts({
+    hunter: require('../assets/fonts/HuntersScript.ttf')
+  })
 	const renderItem = ({ item }) => (
 		<Wave wave={item} onChildClick={props.handleChildClick}/>
 	  );
@@ -188,7 +192,7 @@ const styles = StyleSheet.create({
 	  },
 	color: {
 		color:'#FFFFFF',
-		//fontFamily: 'Montserrat',
+		fontFamily: 'hunter',
 	},
 	card: {
 		width: 300,

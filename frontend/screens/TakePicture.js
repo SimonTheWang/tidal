@@ -3,11 +3,16 @@ import {
   StyleSheet, Text, View, Image, TouchableOpacity
 } from 'react-native';
 import { Camera } from 'expo-camera';
+import * as Font from 'expo-font'
 
 export const TakePicture = ({navigation, route}) => {
 	const [hasPermission, setHasPermission] = useState(null);
 	const [picture, setPicture] = useState(null)
 	let camera = null
+
+	Font.useFonts({
+    hunter: require('../assets/fonts/HuntersScript.ttf')
+  })
 
 	useEffect(() => {
 		(async () => {
@@ -100,7 +105,7 @@ const styles = StyleSheet.create({
     width: 300
   },
   buttonText: {
-    //fontFamily: 'Montserrat',
+    fontFamily: 'hunter',
     color: 'white',
     textAlign: 'center'
   },

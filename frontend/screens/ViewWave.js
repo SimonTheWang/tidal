@@ -39,7 +39,7 @@ const styles = StyleSheet.create({
     width: 300
   },
   buttonText: {
-    //fontFamily: 'Montserrat',
+    //fontFamily: 'hunter',
     color: 'white',
     textAlign: 'center',
   },

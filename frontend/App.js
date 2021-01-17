@@ -2,10 +2,15 @@ import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { Choose, Welcome, TakePicture, Ride, ViewWave } from './screens';
+import * as Font from 'expo-font'
 
 const Stack = createStackNavigator();
 
 export default function App() {
+  Font.useFonts({
+    hunter: require('./assets/fonts/HuntersScript.ttf')
+  })
+
   return (
     <NavigationContainer>
       <Stack.Navigator>
@@ -27,7 +32,7 @@ const screenOptions = {
     headerTintColor: 'white',
     headerTitleStyle: {
       fontWeight: '900',
-      //fontFamily: 'Montserrat',
+      fontFamily: 'hunter',
     },
   },
   create: {

@@ -2,6 +2,7 @@ import React from 'react';
 import {
   StyleSheet, Text, View, ImageBackground, TouchableOpacity, ScrollView, Image
 } from 'react-native';
+import * as Font from 'expo-font'
 
 const TASKS = [
   'Plant something',
@@ -13,6 +14,10 @@ const TASKS = [
 ];
 
 export const Choose = ({navigation}) => {	
+  Font.useFonts({
+    hunter: require('../assets/fonts/HuntersScript.ttf')
+  })
+
 	const tasks = TASKS.map((task) => {
     return (
       <View key={task}>
@@ -58,7 +63,7 @@ const styles = StyleSheet.create({
     width: 300
   },
   buttonText: {
-    //fontFamily: 'Montserrat',
+    fontFamily: 'hunter',
     color: 'white',
     textAlign: 'center'
   },

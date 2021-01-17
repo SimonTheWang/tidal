@@ -2,8 +2,13 @@ import React from 'react';
 import { Card, Title, Paragraph
 } from 'react-native-paper';
 import { StyleSheet} from 'react-native';
+import * as Font from 'expo-font'
 
 export const Wave = (props) => {
+  Font.useFonts({
+    hunter: require('../assets/fonts/HuntersScript.ttf')
+  })
+
     function handleClick() {
       props.onChildClick(props.wave)
     }
@@ -26,10 +31,10 @@ const styles = StyleSheet.create({
   },
   textArea:{
     backgroundColor: '#1900B5',
-    //fontFamily: 'Montserrat',
+    fontFamily: 'hunter',
   },
   color:{
     color: 'white',
-    //fontFamily: 'Montserrat'
+    fontFamily: 'hunter',
   }
 });

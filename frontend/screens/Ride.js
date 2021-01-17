@@ -2,8 +2,13 @@ import React from 'react';
 import {
   StyleSheet, Text, View, Image, TouchableOpacity,
 } from 'react-native';
+import * as Font from 'expo-font'
 
 export const Ride = ({navigation, route}) => {
+  Font.useFonts({
+    hunter: require('../assets/fonts/HuntersScript.ttf')
+  })
+
 	return (
 		<View style={styles.container}>
 			<Image source={require('../assets/wave.png')} style={styles.image}></Image>
@@ -51,7 +56,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center'
   },
   buttonText: {
-    //fontFamily: 'Montserrat',
+    fontFamily: 'hunter',
     color: 'white',
     textAlign: 'center',
     fontSize: 30
