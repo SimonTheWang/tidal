@@ -5,7 +5,7 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 -npm star in frontend
 
 ## To use Wave algorithm
-- go in /generate/*yourWaveName* directory
+- go in /generate/*yourWaveName* path
 - this path takes query params as follows:
   - "num": number of nodes in the tree
   - "root": name of person who started the wave
