@@ -1,34 +1,25 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
+-yarn in tidal and frontend directories
+-npm stary in frontend
+## Inspiration
+During the pandemic, we realized the need for community interactions more than ever. As we worked on the project, we realized its potential for environmental applications. 
 
-First, run the development server:
+## What it does
+Tidal is an application that encourages users to create movements based on a single task, like “planting a seed/tree”. To keep one of these movements—also called “waves”—going, you must take a photo of the required task and post it. Each time a user completes a task, either by starting a movement or contributing to an existing one, up to two friends or random users can then continue its outreach by sharing their own contribution to that branch. This tree structure gives the possibility of exponential growth for any single movement started on our app.
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+## How We built it
+Our team of three built this application with React Native. A Next.js backend hosted on vercel was used for API calls and wave visualisation,  and data was stored using a MongoDB database.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Challenges we ran into
+At first we had trouble making backend connections to the display of waves, but were able to sort it with choosing the implementation of binary trees as data structure for these waves.
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+## Accomplishments that we’re proud of
+We are proud of making a functioning application with first use of react native, and created a working algorithm that generates waves for demo purposes.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+## What we learned
+During this project, we learned how to host using Vercel and created a React Native Project for the first time.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/import?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## What's next for Tidal
+To improve Tidal, we have to make a more solid visual interface (including the wave animation), diversify the application of our project, and make more API calls. We would also like to build a working system that is connected with a database in order to store real user generated data instead of having generated content
