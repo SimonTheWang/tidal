@@ -2,7 +2,15 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 ## Getting Started
 -yarn in tidal and frontend directories
--npm stary in frontend
+-npm star in frontend
+
+## To use Wave algorithm
+- go in /generate/*yourWaveName* directory
+- this path takes query params as follows:
+  - "num": number of nodes in the tree
+  - "root": name of person who started the wave
+  - "date": date of first action
+
 ## Inspiration
 During the pandemic, we realized the need for community interactions more than ever. As we worked on the project, we realized its potential for environmental applications. 
 
